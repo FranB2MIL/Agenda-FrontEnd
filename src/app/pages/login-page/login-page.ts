@@ -1,12 +1,29 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { FormsModule, NgForm } from '@angular/forms';
+import { Router, RouterModule } from '@angular/router';
+import { Auth } from '../../services/auth';
 
 @Component({
   selector: 'app-login-page',
-  imports: [RouterModule],
+  imports: [RouterModule, FormsModule],
   templateUrl: './login-page.html',
   styleUrl: './login-page.scss'
 })
 export class LoginPage {
-  
+  authService = inject(Auth)
+  router = inject(Router)
+
+  errorLogin = false;
+
+  async login(form:NgForm){
+    console.log(form.value)
+    this.errorLogin = false;
+    if(!form.value.email || !form.value.password){
+      this.errorLogin = true;
+      return
+    }
+    const loginResult = await this.authService.login(form.value);
+    if(loginResult) this.router.navigate(["/contact-list-page"]);
+    this.errorLogin = true;
+  }
 }

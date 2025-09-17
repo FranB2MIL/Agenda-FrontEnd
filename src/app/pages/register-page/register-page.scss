@@ -2,7 +2,6 @@
 .section-container{
     background-color: rgb(18, 18, 18);
     background-image: url('/minimalist grey flow wallpaper in 4k for desktop.jpg');
-    
     background-size: cover;     
     background-position: center;
     display: flex;
@@ -23,7 +22,8 @@
     padding: 25px;
     border: 1px solid lightblue;
     border-radius: 20px;
-    height: 300px;
+    // height: 300px;
+    height: fit-content;
     box-shadow: 0px 0px 10px gray;
 }
 .inner-left-container{
@@ -53,7 +53,7 @@ h1{
 #input-div{
     display: flex;
     flex-direction: column;
-    gap: 10px
+    gap: 10px;
 }
 
 #button-div{
@@ -80,14 +80,13 @@ h1{
 #email-input{
     display: flex;
     flex-direction: column;
-    padding-bottom: 15px;
+    // padding-bottom: 15px;
     width: 300px;
-    
-    
+    gap: 10px;
 }
 
 #password-input{
     display: flex;
     flex-direction: column;
-    
+    gap: 10px;
 }

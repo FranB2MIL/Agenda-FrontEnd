@@ -1,6 +1,6 @@
 <div class="fixed-container">
     <h1 class="fixed-title">AgendaTUP</h1>
-    <input type="text" placeholder="Buscar">
+    <input id="buscar-logged" type="text" placeholder="Buscar">
 </div>
 
 <div id="full-layout">
@@ -9,6 +9,7 @@
             <a routerLink="/contact-list-page" class="page-select" >Contactos ></a>
             <a routerLink="/group-list-page"  class="page-select" >Grupos ></a>
         </nav>
+        <a routerLink="/login-page">Salir</a>
     </div>
     <div id="router-outlet">
         <router-outlet/>

@@ -1,0 +1,54 @@
+<section class="section-container">
+    <div class="inner-section-container">
+        <div class="inner-left-container">
+            <h1 id="login-title">Registrate</h1>
+            <p id="p-login">Crea tu cuenta de AgendaTUP</p>
+        </div>
+        <div class="inner-right-container">
+            <div id="input-div">
+                <form #registerForm="ngForm" (ngSubmit)="register(registerForm.value)">
+                    <div id="password-input">
+                        <label for="fisrtName"></label>
+                        <input class="login-input" type="text" placeholder="Nombre" id="firstName" name="firstName" type="" ngModel #firstNmae="ngModel" required="true" minlength="3" autocomplete="firstName">
+                    </div>
+                    <div id="password-input">
+                        <label for="lastName"></label>
+                        <input class="login-input" type="text" placeholder="Apellido" id="lastName" name="lastName" type="" ngModel #lastNmae="ngModel" required="true" minlength="3" autocomplete="lastName">
+                    </div>
+                    
+                    <div id="email-input">
+                        <label for="email"></label>
+                        <input class="login-input" placeholder="Correo electronico" name="email" type="email" id="email" ngModel #email="ngModel" required="true" autocomplete="email">
+                        @if (email.invalid && !email.pristine) {
+                            <p class="error">Debe colocar un correo electrónico.</p>
+                        }
+                        <!-- <a class="login-forget" href="">¿Has olvidado tu correo electronico?</a> -->
+                    </div>
+                    <div id="password-input">
+                        <label for="password"></label>
+                        <input class="login-input" type="text" placeholder="Contraseña" id="password" name="password" type="password" ngModel #password="ngModel" required="true" minlength="3" autocomplete="current-password">
+                        <!-- @if (password.invalid && !password.pristine) {
+                            <p class="error">Debe colocar una contraseña de al menos 4 caracteres.</p>
+                        } -->
+                        <!-- <a class="login-forget" href="">¿Has olvidado tu contraseña?</a> -->
+                    </div>
+                    <div id="password-input">
+                        <label for="password"></label>
+                        <input class="login-input" type="text" placeholder="Repita la constraseña" id="password2" name="password2" type="password" ngModel #password2="ngModel" required="true" minlength="3" autocomplete="new-password">
+                    </div>
+                    <div id="button-div">
+                        <a routerLink="/login-page" class="login-forget" href="">Salir</a>
+                        <!-- <a routerLink="/contact-list-page" class="solid-button">Siguiente</a> -->
+                        <button [disabled]="registerForm.invalid" class="solid-button">Crear cuenta</button>
+                    </div>
+                </form> 
+       
+            </div>
+            <!-- <div id="button-div">
+                <a class="login-forget" href="">Crear cuenta</a>
+                <a routerLink="/contact-list-page" class="solid-button">Siguiente</a>
+            </div> -->
+        </div>
+    </div>
+</section>
+

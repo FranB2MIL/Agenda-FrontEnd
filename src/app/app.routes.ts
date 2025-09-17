@@ -5,11 +5,16 @@ import { ContactDetailsPage } from './pages/contact-details-page/contact-details
 import { ContactListPage } from './pages/contact-list-page/contact-list-page';
 import { LoggedLayout } from './layout/logged-layout/logged-layout';
 import { GroupListPage } from './pages/group-list-page/group-list-page';
+import { RegisterPage } from './pages/register-page/register-page';
 
 export const routes: Routes = [
     {
         path:"login-page",
         component: LoginPage
+    },
+    {
+        path:"register-page",
+        component: RegisterPage
     },
     {
         //path vaio se abre cuando la pagina no tiene url mas que localhost
@@ -28,6 +33,8 @@ export const routes: Routes = [
             path:"group-list-page",
             component: GroupListPage
         }
+        
+
         ]
     }
 ];

@@ -3,6 +3,9 @@
 }
 .contact-list-container{
     gap: 15px;
+    max-width: calc(100vw - 200px);
+    max-height: calc(100vh - 50px);
+    overflow: scroll;
 }
 #contact-container{
     height: 30px;
@@ -11,4 +14,5 @@
     align-items: center;
     border: 1px solid grey;
     padding-left: 10px;
+
 }

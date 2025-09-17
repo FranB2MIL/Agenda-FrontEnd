@@ -6,20 +6,35 @@
         </div>
         <div class="inner-right-container">
             <div id="input-div">
-                <div id="email-input">
-                    <input class="login-input" type="text" placeholder="Correo electronico">
-                    <!-- <input type="text" placeholder="Contraseña"> -->
-                    <a class="login-forget" href="">¿Has olvidado tu correo electronico?</a>
-                </div>
-                <div id="password-input">
-                    <input class="login-input" type="text" placeholder="Contraseña">
-                    <a class="login-forget" href="">¿Has olvidado tu contraseña?</a>
-                </div>       
+                <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+                    <div id="email-input">
+                        <label for="email"></label>
+                        <input class="login-input" placeholder="Correo electronico" name="email" type="email" id="email" ngModel #email="ngModel" required="true" autocomplete="email">
+                        @if (email.invalid && !email.pristine) {
+                            <p class="error">Debe colocar un correo electrónico.</p>
+                        }
+                        <a class="login-forget" href="">¿Has olvidado tu correo electronico?</a>
+                    </div>
+                    <div id="password-input">
+                        <label for="password"></label>
+                        <input class="login-input" type="text" placeholder="Contraseña" id="password" name="password" type="password" ngModel #password="ngModel" required="true" minlength="4" autocomplete="current-password">
+                        <!-- @if (password.invalid && !password.pristine) {
+                            <p class="error">Debe colocar una contraseña de al menos 4 caracteres.</p>
+                        } -->
+                        <a class="login-forget" href="">¿Has olvidado tu contraseña?</a>
+                    </div>
+                    <div id="button-div">
+                        <a routerLink="/register-page" class="login-forget" href="">Crear cuenta</a>
+                        <!-- <a routerLink="/contact-list-page" class="solid-button">Siguiente</a> -->
+                        <button [disabled]="loginForm.invalid" class="solid-button">Iniciar sesión</button>
+                    </div>
+                </form> 
+       
             </div>
-            <div id="button-div">
+            <!-- <div id="button-div">
                 <a class="login-forget" href="">Crear cuenta</a>
                 <a routerLink="/contact-list-page" class="solid-button">Siguiente</a>
-            </div>
+            </div> -->
         </div>
     </div>
 </section>

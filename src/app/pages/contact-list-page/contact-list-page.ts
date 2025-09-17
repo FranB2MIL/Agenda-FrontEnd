@@ -6,6 +6,8 @@ import { ContactsService } from '../../services/contacts-service';
 import { Auth } from '../../services/auth';
 import { FormsModule } from '@angular/forms';
 
+
+
 @Component({
   selector: 'app-contact-list-page',
   imports: [RouterModule,ContactListItem, FormsModule],
@@ -48,5 +50,9 @@ export class ContactListPage {
       image: 'aaa'
     })
   }
+  botonCartel(){
+    
+  }
 }
+
 
