@@ -19,9 +19,11 @@ export class ContactListPage {
   authService = inject(Auth)
   contactsService = inject(ContactsService)
 
-  createContact(form:any){
-    console.log(form)
+  ngOnInit() {
+    this.contactsService.getContacts();
+  }
 
+  async createContact(form:any){
     const newContact:NewContact = {
       firstName: form.firstName,
       lastName: form.lastName,
@@ -33,23 +35,13 @@ export class ContactListPage {
       image: form.image
     }
 
-    this.contactsService.createContact(newContact)
+    const ok = await this.contactsService.createContact(newContact);
 
-
+    if (ok) {
+      this.contactsService.getContacts();
+    }
   }
 
-  crearContactoEjemplo(){
-    this.contactsService.createContact({
-      firstName: 'aaaa',
-      lastName: 'qqq',
-      address: 'aaa',
-      email: 'aaa',
-      number: 'aaaaa',
-      company: 'aaa',
-      description: 'aaa',
-      image: 'aaa'
-    })
-  }
   botonCartel(){
     
   }

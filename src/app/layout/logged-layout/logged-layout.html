@@ -9,7 +9,7 @@
             <a routerLink="/contact-list-page" class="page-select" >Contactos ></a>
             <a routerLink="/group-list-page"  class="page-select" >Grupos ></a>
         </nav>
-        <a routerLink="/login-page">Salir</a>
+        <a (click)="this.authService.logout()">Salir</a>
     </div>
     <div id="router-outlet">
         <router-outlet/>

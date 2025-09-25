@@ -1,5 +1,42 @@
 #contact{
     display: flex;
     justify-content: space-between;
-    width: 83vw;
+    width: 82vw;
+    height: 40px;
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+    border: 1px solid lightblue;
+    padding-left: 10px;
+    border-radius: 15px;
+    margin: 15px;
+    
+    background-color: rgb(43, 42, 42);
+    color: white;
 }
+
+
+
+#boton-borrar{
+    border: 1px solid lightblue;
+    border-radius: 10px;
+    color: rgb(44, 44, 44);
+    background-color: lightblue;
+    margin-right: 5px;
+    height: 25px;
+}
+#boton-borrar:hover{
+    background-color: rgb(43, 42, 42);
+    color: lightblue;
+}
+
+#edit-button{
+    text-decoration: none;
+    border: 1px solid lightblue;
+    border-radius: 10px;
+    height: 25px;
+    background-color: lightblue;
+    color: rgb(44, 44, 44);
+    
+}
+

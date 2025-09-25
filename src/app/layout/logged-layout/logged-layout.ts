@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
+import { Auth } from '../../services/auth';
 
 @Component({
   selector: 'app-logged-layout',
@@ -8,5 +9,5 @@ import { RouterModule, RouterOutlet } from '@angular/router';
   styleUrl: './logged-layout.scss'
 })
 export class LoggedLayout {
-
+  authService = inject(Auth);
 }

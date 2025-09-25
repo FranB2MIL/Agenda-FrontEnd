@@ -1,6 +1,14 @@
-<p id="contact">Contacto Nro {{index() +1}} {{contacto().firstName}}
-    @if(contacto().isFavorite){
-        <!-- FAV -->
-    }
-    <button (click)="contactsService.deleteContact(contacto().id)">Borrar</button>
-</p>
+
+<div id="contact">
+
+    <p>Contacto Nro {{index() +1}} {{contacto().firstName}}
+        @if(contacto().isFavorite){
+            <!-- FAV -->
+        }
+    </p>
+    <div id="contact-buttons">
+        <a id="edit-button" [routerLink]="['/contacts',contacto().id,'edit']">Editar</a>
+        <button id="boton-borrar" (click)="contactsService.deleteContact(contacto())">Borrar</button>
+    </div>
+</div>
+
