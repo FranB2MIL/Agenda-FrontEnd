@@ -17,4 +17,5 @@ export class ContactListItem {
   contacto = input.required<Contact>()
 
   contactsService = inject(ContactsService)
+  
 }

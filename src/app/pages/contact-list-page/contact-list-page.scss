@@ -2,11 +2,21 @@
 .contact-list-container{
     gap: 15px;
     max-width: calc(100vw - 200px);
-    max-height: calc(100vh - 50px);
+    height: calc(100vh - 50px);
     overflow-y: scroll;
-    
     // background-color: rgb(18, 18, 18);
+    background-repeat:no-repeat;
+    background-size: cover;
     background-image: url('/minimalist grey flow wallpaper in 4k for desktop.jpg');
+}
+
+#contact-list-container{
+    --espacio: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio);
+    padding-top: var(--espacio);
+    padding-left: var(--espacio);
 }
 // #contact-container{
 //     height: 40px;

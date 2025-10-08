@@ -9,14 +9,14 @@
     border: 1px solid lightblue;
     padding-left: 10px;
     border-radius: 15px;
-    margin: 15px;
+    // margin: 15px;
     
     background-color: rgb(43, 42, 42);
     color: white;
 }
 #contact:hover{
-    transition: 0.1s;
-    width: 83vw;
+    transition: 0.2s;
+    width: 82vw;
     height: 50px;
     margin-left: 10px;
     font-weight: 500;
@@ -37,12 +37,26 @@
     color: lightblue;
 }
 
-#edit-button{
-    text-decoration: none;
+.edit-button{
     border: 1px solid lightblue;
     border-radius: 10px;
-    height: 25px;
-    background-color: lightblue;
     color: rgb(44, 44, 44);
+    background-color: lightblue;
+    margin-right: 5px;
+    height: 25px;
     
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    
+}
+.edit-button:hover{
+    background-color: rgb(43, 42, 42);
+    color: lightblue;
+}
+
+#contact-buttons{
+    display: flex;
+    align-items: center;
 }
