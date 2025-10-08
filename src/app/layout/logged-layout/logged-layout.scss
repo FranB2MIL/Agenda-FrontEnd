@@ -86,7 +86,27 @@ nav{
     
 }
 #salir{
+  // color: rgb(43, 42, 42);
+  // text-decoration: none;
+  // cursor: pointer;
+  // border: 1px solid lightblue;
+  // border-radius: 15px;
+  // background-color: lightblue;
+  // height: ;
+  border: 1px solid black;
+  border-radius: 70px;
+  background-color: lightblue;
+  color: rgb(41, 40, 40);
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+#salir:hover{
+  background-color: rgb(41, 40, 40);
   color: lightblue;
-  text-decoration: none;
-  cursor: pointer;
+  border: 1px solid lightblue;
 }
