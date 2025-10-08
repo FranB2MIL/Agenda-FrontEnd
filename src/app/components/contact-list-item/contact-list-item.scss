@@ -14,7 +14,14 @@
     background-color: rgb(43, 42, 42);
     color: white;
 }
-
+#contact:hover{
+    transition: 0.1s;
+    width: 83vw;
+    height: 50px;
+    margin-left: 10px;
+    font-weight: 500;
+    font-size: larger;
+}
 
 
 #boton-borrar{
@@ -39,4 +46,3 @@
     color: rgb(44, 44, 44);
     
 }
-

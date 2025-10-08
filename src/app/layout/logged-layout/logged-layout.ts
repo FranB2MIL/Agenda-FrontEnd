@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { Auth } from '../../services/auth';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-logged-layout',
@@ -10,4 +11,20 @@ import { Auth } from '../../services/auth';
 })
 export class LoggedLayout {
   authService = inject(Auth);
+
+  showLogoutModal() {
+    Swal.fire({
+      title: "Do you want to log out?",
+      showDenyButton: false,
+      showCancelButton: true,
+      showConfirmButton: true,
+      confirmButtonText: "Ok",
+      denyButtonText: `Don't save`
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        this.authService.logout();
+      }
+    });
+  }
 }

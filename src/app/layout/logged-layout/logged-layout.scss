@@ -46,6 +46,9 @@ nav{
     border-right: 1px solid lightblue;
     font-size: larger;
     padding-right: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 #fixed-nav-bar{
   gap: 30px;
@@ -53,18 +56,20 @@ nav{
 .page-select{
   border: 1px solid black;
   border-radius: 70px;
-  background-color: rgb(65, 65, 65);
-  color: white;
+  background-color: lightblue;
+  color: rgb(41, 40, 40);
   margin-top: 15px;
   text-align: center;
   height: 30px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center;  
 }
+
 .page-select:hover{
-  background-color: grey;
-  color: black;
+  background-color: rgb(41, 40, 40);
+  color: lightblue;
+  border: 1px solid lightblue;
 }
 .fixed-container{
   display: flex;
@@ -79,4 +84,9 @@ nav{
   height: 30px;
   color: white;
     
+}
+#salir{
+  color: lightblue;
+  text-decoration: none;
+  cursor: pointer;
 }

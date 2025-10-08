@@ -20,6 +20,7 @@ export class AddContactPage implements OnInit {
   idContacto = input<string>();
   contactoBack: Contact | undefined = undefined;
   form = viewChild<NgForm>("newContactForm")
+  solicitudABackEnCurso = false;
 
   async ngOnInit() {
     if (this.idContacto()) {
@@ -54,18 +55,22 @@ export class AddContactPage implements OnInit {
       description: form.description,
       image: form.image
     }
+    this.solicitudABackEnCurso = true;
     let res;
     if (this.idContacto()) {
       res = await this.contactsService.editContact({
-        ...newContact, id: this.contactoBack!.id, isFavorite: false})
+        ...newContact, id: this.contactoBack!.id, isFavorite: false
+      })
     } else {
       res = await this.contactsService.createContact(newContact)
     }
+    this.solicitudABackEnCurso = false;
+
     if (!res) {
       this.errorEnBack = true;
       return
     };
-    this.router.navigate(["/contacts",res.id]);
+    this.router.navigate(["/contacts", res.id]);
 
 
 
@@ -96,4 +101,5 @@ export class AddContactPage implements OnInit {
     //       this.errorRegister = true;
     //     }
     //   }
-  }}
+  }
+}
