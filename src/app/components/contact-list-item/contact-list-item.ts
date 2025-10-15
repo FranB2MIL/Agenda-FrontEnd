@@ -2,6 +2,8 @@ import { Component, inject, input } from '@angular/core';
 import { Contact } from '../../interfaces/contacto';
 import { ContactsService } from '../../services/contacts-service';
 import { RouterLink, RouterModule } from '@angular/router';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-contact-list-item',
@@ -14,8 +16,27 @@ export class ContactListItem {
   index = input.required<number>();
   esFavorito = input<boolean>()
 
+
+
   contacto = input.required<Contact>()
 
   contactsService = inject(ContactsService)
-  
+
+  showDeleteModal() {
+    Swal.fire({
+      title: "Borrar contacto",
+      text: "El borrado es permanente, ¿Estas seguro?",
+      showDenyButton: false,
+      showCancelButton: true,
+      showConfirmButton: true,
+      confirmButtonText: "Borrar definitivamente.",
+      denyButtonText: `Don't save`
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        this.contactsService.deleteContact(this.contacto())
+          ;
+      }
+    });
+  }
 }

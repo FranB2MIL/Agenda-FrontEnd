@@ -10,8 +10,8 @@ export class ContactsService {
   authService = inject(Auth);
   contactos: Contact[] = [];
   readonly URL_BASE = "https://agenda-api.somee.com/api/contacts";
-  
-  async createContact(nuevoContacto:NewContact){
+
+  async createContact(nuevoContacto: NewContact) {
     const res = await fetch('https://agenda-api.somee.com/api/Contacts', {
       method: 'POST',
       headers: {
@@ -20,7 +20,7 @@ export class ContactsService {
       },
       body: JSON.stringify(nuevoContacto),
     });
-    
+
     if (res.ok) {
       const contact = await res.json()
       this.contactos.push(contact)
@@ -32,9 +32,9 @@ export class ContactsService {
     }
   }
 
-  async deleteContact(contact: Contact){
+  async deleteContact(contact: Contact) {
     const res = await fetch('https://agenda-api.somee.com/api/Contacts' + "/" + contact.id
-      ,{
+      , {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -43,7 +43,7 @@ export class ContactsService {
         body: JSON.stringify(contact.id)
       }
     );
-     this.contactos = this.contactos.filter(contacto => contacto.id !== contact.id);
+    this.contactos = this.contactos.filter(contacto => contacto.id !== contact.id);
   }
 
   async editContact(contact: Contact) {
@@ -57,8 +57,8 @@ export class ContactsService {
         body: JSON.stringify(contact)
       });
     if (!res.ok) return;
-    this.contactos = this.contactos.map(oldContact =>{
-      if(oldContact.id === contact.id) return contact;
+    this.contactos = this.contactos.map(oldContact => {
+      if (oldContact.id === contact.id) return contact;
       return oldContact
     })
     return contact;
@@ -72,25 +72,33 @@ export class ContactsService {
         Authorization: 'Bearer ' + this.authService.token
       },
     })
-    if(res.ok){
+    if (res.ok) {
       this.contactos = await res.json();
     }
   }
   async getContactById(id: string | number) {
-    const res = await fetch(this.URL_BASE+"/"+id, {
+    const res = await fetch(this.URL_BASE + "/" + id, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
         Authorization: 'Bearer ' + this.authService.token
       },
     })
-    if(res.ok){
-      const resJson:Contact = await res.json();
+    if (res.ok) {
+      const resJson: Contact = await res.json();
       return resJson;
     }
     return null
   }
+  async setFavourite(id: string | number) {
+    const res = await fetch(this.URL_BASE + "/" + id + "/favorite",
+      {
+        method: "POST",
+        headers: {
+          Authorization: "Bearer " + this.authService.token,
+        },
+      });
+
+  }
+
 }
-
- 
-

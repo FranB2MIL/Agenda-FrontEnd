@@ -43,13 +43,14 @@
     color: rgb(44, 44, 44);
     background-color: lightblue;
     margin-right: 5px;
-    height: 25px;
-    
+    height: 23px;
+    width: 37px;
+    font-size: 13.3333px;
     display: flex;
     align-items: center;
     padding-left: 5px;
-    padding-right: 5px;
-    
+    // padding-right: 5px;
+    // padding: 1px 6px;
 }
 .edit-button:hover{
     background-color: rgb(43, 42, 42);
@@ -59,4 +60,10 @@
 #contact-buttons{
     display: flex;
     align-items: center;
+}
+
+#contact-detail{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
 }
