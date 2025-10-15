@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, RouterLink } from '@angular/router';
 import { ContactListItem } from '../../components/contact-list-item/contact-list-item';
 import { Contact, NewContact } from '../../interfaces/contacto';
 import { ContactsService } from '../../services/contacts-service';
@@ -18,6 +18,7 @@ export class ContactListPage {
 
   authService = inject(Auth)
   contactsService = inject(ContactsService)
+
 
   ngOnInit() {
     this.contactsService.getContacts();

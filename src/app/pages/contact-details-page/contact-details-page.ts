@@ -2,6 +2,7 @@ import { Component, inject, input, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { ContactsService } from '../../services/contacts-service';
 import { Contact } from '../../interfaces/contacto';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-contact-details-page',

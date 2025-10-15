@@ -1,7 +1,7 @@
 import { Component, inject, input } from '@angular/core';
 import { Contact } from '../../interfaces/contacto';
 import { ContactsService } from '../../services/contacts-service';
-import { RouterLink, RouterModule } from '@angular/router';
+import { RouterLink, RouterModule, Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
 
@@ -16,11 +16,12 @@ export class ContactListItem {
   index = input.required<number>();
   esFavorito = input<boolean>()
 
-
+  private router = inject(Router);
 
   contacto = input.required<Contact>()
 
   contactsService = inject(ContactsService)
+  
 
   showDeleteModal() {
     Swal.fire({

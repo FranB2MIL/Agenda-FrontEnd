@@ -4,6 +4,8 @@
     background-image: url('/minimalist grey flow wallpaper in 4k for desktop.jpg');
     height: calc(100vh - 50px);
     overflow-y: scroll;
+    display: flex;
+    justify-content: center;
 }
 .message{
     color: black;
@@ -15,4 +17,66 @@
     padding: 10px;
     margin: 15px;
     text-align: center;
+}
+#contact-container{
+    border: 1px solid lightblue;
+    border-radius: 15px;
+    background-color: rgb(42, 42, 42);
+    padding: 15px;
+    color: lightblue;
+    height: fit-content;
+    width: 500px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    display: flex;
+    
+    align-items: stretch; 
+    flex-direction: column;
+    
+}
+#name{
+    color: black;
+    font-size: x-large;
+    font-weight: 500;
+    border: 1px solid lightblue;
+    border-radius: 50px;
+    background-color: lightblue;
+    padding: 10px;
+    margin: 15px;
+    text-align: center;
+}
+.info{
+    color: lightblue;
+    font-size: x-large;
+    font-weight: 250;
+    border: 1px solid lightblue;
+    border-radius: 50px;
+    background-color: rgb(42, 42, 42);
+    padding: 10px;
+    margin: 15px;
+}
+#button-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#edit{
+    border: 1px solid black;
+    border-radius: 70px;
+    background-color: lightblue;
+    color: rgb(41, 40, 40);
+    margin: 15px;
+    width: 80px;
+    text-align: center;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
+    
+}
+#edit:hover{
+    background-color: rgb(41, 40, 40);
+  color: lightblue;
+  border: 1px solid lightblue;
 }

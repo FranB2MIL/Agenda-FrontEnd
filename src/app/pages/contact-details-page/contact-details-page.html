@@ -4,20 +4,19 @@
     } @else if(!contacto) {
     <p class="message">No se encontró el contacto</p>
     } @else {
-    <h1>{{contacto!.firstName}} {{contacto!.lastName}}</h1>
-    <p>Email: {{contacto.email}}</p>
-    <p>Teléfono: {{contacto.number}}</p>
+    <div id="contact-container">
+        <div id="contact">
+            <h1 id="name">{{contacto!.firstName}} {{contacto!.lastName}}</h1>
+            <p class="info">Email: {{contacto.email}}</p>
+            <p class="info">Teléfono: {{contacto.number}}</p>
+        </div>
+        <div id="button-container">
 
-    <!-- @if (contacto.isFavorite) {
-<p>⭐</p>
-<button (click)="toggleFavorite()">Desmarcar favorito</button>
-} @else {
-<button (click)="toggleFavorite()">Marcar como favorito</button>
-} -->
-    <p>
-        <a [routerLink]="['/contacts',idContacto(),'edit']">Editar</a>
-    </p>
-    <button (click)="deleteContact()">Eliminar</button>
+            <p>
+                <a id="edit" [routerLink]="['/contacts',idContacto(),'edit']">Editar</a>
+            </p>
+            <button id="edit" routerLink="/">Volver</button>    
+        </div>
+    </div>
     }
-
 </div>
