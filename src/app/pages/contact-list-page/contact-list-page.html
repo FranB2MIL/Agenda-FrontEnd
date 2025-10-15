@@ -2,9 +2,10 @@
   <div >
     <div id="contact-list-container">
       @for (contacto of contactsService.contactos; track $index){
-        <a id="contact-container" [routerLink]="['/contacts', contacto.id]">
+        <a id="contact-container" >
           <app-contact-list-item  [contacto]="contacto" [index]="$index"/>
         </a>
+        
       }@empty {
         <p>No hay contactos</p>
       }
