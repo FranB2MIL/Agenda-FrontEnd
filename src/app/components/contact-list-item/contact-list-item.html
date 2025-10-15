@@ -2,7 +2,7 @@
 <div id="contact">
 
     <a id="contact-detail" >
-        <p>Contacto Nro {{contacto().id}} {{contacto().firstName}}
+        <p>Contacto Nro {{index() +1}} {{contacto().firstName}}
             @if(contacto().isFavorite){
                 <!-- FAV -->
             }
