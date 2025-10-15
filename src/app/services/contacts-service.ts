@@ -8,8 +8,9 @@ import { Auth } from './auth';
 export class ContactsService {
 
   authService = inject(Auth);
-  contactos: Contact[] = [];
+  
   readonly URL_BASE = "https://agenda-api.somee.com/api/contacts";
+  contactos: Contact[] = [];
 
   async createContact(nuevoContacto: NewContact) {
     const res = await fetch('https://agenda-api.somee.com/api/Contacts', {
@@ -77,13 +78,14 @@ export class ContactsService {
     }
   }
   async getContactById(id: string | number) {
-    const res = await fetch(this.URL_BASE + "/" + id, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: 'Bearer ' + this.authService.token
-      },
-    })
+    const res = await fetch(this.URL_BASE + "/" + id,
+      {
+        method: 'GET',
+        headers: {
+          // 'Content-Type': 'application/json',
+          Authorization: 'Bearer ' + this.authService.token
+        },
+      })
     if (res.ok) {
       const resJson: Contact = await res.json();
       return resJson;
@@ -98,7 +100,16 @@ export class ContactsService {
           Authorization: "Bearer " + this.authService.token,
         },
       });
-
+    if (!res.ok) return;
+    /** Edita la lista actual de contactos reemplazando sólamente el favorito del que editamos */
+    this.contactos = this.contactos.map(contact => {
+      if (contact.id === id) {
+        return { ...contact, isFavorite: !contact.isFavorite };
+      };
+      return contact;
+    });
+    return true;
   }
-
 }
+
+
